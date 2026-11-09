@@ -247,9 +247,11 @@ dialog.addEventListener('close',()=>{
   let visible=false, ready=false, paused=false, timer=null, index=0, started=false;
   function sync(){
     clearInterval(timer);timer=null;
-    toggle.textContent=paused?'Retomar estampas':'Pausar estampas';
-    toggle.setAttribute('aria-pressed',String(paused));
-    toggle.hidden=motion.matches;
+    if(toggle){
+      toggle.textContent=paused?'Retomar estampas':'Pausar estampas';
+      toggle.setAttribute('aria-pressed',String(paused));
+      toggle.hidden=motion.matches;
+    }
     if(!ready||!visible||paused||motion.matches||document.hidden||dialog.open)return;
     timer=setInterval(()=>{
       frames[index].classList.remove('is-active');
@@ -267,10 +269,10 @@ dialog.addEventListener('close',()=>{
       }));
       ready=true;sync();
     }catch{
-      toggle.hidden=true;
+      if(toggle)toggle.hidden=true;
     }
   }
-  toggle.addEventListener('click',()=>{paused=!paused;sync();});
+  toggle?.addEventListener('click',()=>{paused=!paused;sync();});
   if('IntersectionObserver' in window){
     new IntersectionObserver(entries=>{
       visible=entries[0].isIntersecting;
