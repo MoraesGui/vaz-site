@@ -1,0 +1,38 @@
+.product-zoom-trigger{position:relative;display:grid;place-items:center;gap:12px;width:100%;padding:0;border:0;background:transparent;color:#102747;cursor:zoom-in;font:12px/1.4 Arial,sans-serif}
+.product-zoom-trigger>img{display:block;width:100%}
+.product-zoom-hint{display:inline-block;padding:7px 12px;border:1px solid #10274750;border-radius:18px;background:#f6f8fb;font:12px/1.4 Arial,sans-serif}
+.product-zoom-trigger:hover .product-zoom-hint{background:#e1eafa;border-color:#102747}
+.product-zoom-trigger:focus-visible,.product-zoom button:focus-visible,.zoom-viewport:focus-visible{outline:3px solid #1457c5;outline-offset:3px}
+dialog.product-zoom{position:fixed;inset:0;box-sizing:border-box;width:calc(100vw - 32px);height:calc(100dvh - 32px);max-width:1400px;max-height:none;margin:auto;padding:0;border:0;border-radius:14px;background:#f6f8fb;color:#102747;overflow:hidden;box-shadow:0 24px 100px #0c173440}
+.product-zoom[open]{display:flex;flex-direction:column}
+.product-zoom::backdrop{background:#071931d9}
+.zoom-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:1px solid #10274725;flex-shrink:0}
+.zoom-toolbar h2{margin:0;font:16px/1.4 Arial,sans-serif;overflow-wrap:anywhere}
+.zoom-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;flex-shrink:0}
+.zoom-controls button{min-width:36px;min-height:36px;padding:7px 11px;border:1px solid #10274750;border-radius:8px;background:transparent;color:inherit;font:13px/1.3 Arial,sans-serif;cursor:pointer}
+.zoom-controls button:hover{background:#e1eafa}
+.zoom-controls button:disabled{opacity:.35;cursor:default}
+.zoom-controls output{min-width:45px;text-align:center;font:12px Arial,sans-serif}
+.zoom-help{margin:0;padding:8px 18px;font:12px/1.5 Arial,sans-serif;color:#435675;flex-shrink:0}
+.zoom-viewport{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;cursor:grab;scroll-behavior:auto;touch-action:pan-x pan-y pinch-zoom;background:#eef1f5}
+.zoom-viewport.is-dragging{cursor:grabbing}
+.zoom-canvas{display:grid;place-items:center}
+.zoom-canvas>img{display:block;max-width:none;object-fit:contain;user-select:none;pointer-events:none}
+.zoom-error{padding:12px 18px;font:14px Arial,sans-serif}
+#shirt-sides,#sweatshirt-sides{gap:8px}
+#shirt-sides button,#sweatshirt-sides button{min-height:32px;padding:6px 13px;border-radius:16px;font:12px/1.4 Arial,sans-serif}
+#shirt-sides button:hover,#sweatshirt-sides button:hover{border-color:#102747}
+.catalog-sides button{min-height:32px;padding:6px 13px;border-radius:16px;font:12px/1.4 Arial,sans-serif}
+.modal-image.has-inline-zoom{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:12px;min-width:0;padding:24px 12px 24px 20px;background:transparent}
+.inline-zoom-viewport{width:100%;height:clamp(300px,65dvh,650px);min-width:0;overflow:auto;overscroll-behavior:contain;scroll-behavior:auto;touch-action:pan-x pan-y pinch-zoom;scrollbar-width:thin}
+.inline-zoom-canvas{display:grid;place-items:center;min-width:100%;min-height:100%}
+.modal-image .inline-zoom-canvas>img{display:block;max-width:none;max-height:none;min-height:0;object-fit:contain;pointer-events:none;user-select:none}
+.inline-zoom-viewport.is-zoomed{cursor:grab}
+.inline-zoom-viewport.is-dragging{cursor:grabbing}
+.inline-zoom-control{align-self:center;display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--royal,#2346e8);font:10px/1.4 var(--mono,monospace)}
+.inline-zoom-control input{appearance:none;writing-mode:vertical-lr;direction:rtl;width:8px;height:172px;border-radius:8px;background:var(--royal,#2346e8);cursor:pointer;margin:0 13px}
+.inline-zoom-control input::-webkit-slider-thumb{appearance:none;width:14px;height:14px;border-radius:50%;background:#f6f8fb;border:1px solid #b5c4ec;box-shadow:0 1px 3px #10274725}
+.inline-zoom-control input::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:#f6f8fb;border:1px solid #b5c4ec}
+.inline-zoom-control input:focus-visible,.inline-zoom-viewport:focus-visible{outline:2px solid var(--royal,#2346e8);outline-offset:5px}
+@media(max-width:600px){.modal-image.has-inline-zoom{height:auto;padding:24px 18px 0;gap:8px}.inline-zoom-viewport{height:32dvh;min-height:220px}.inline-zoom-control input{height:140px}}
+@media(max-width:600px){dialog.product-zoom{width:calc(100vw - 16px);height:calc(100dvh - 16px);border-radius:10px}.zoom-toolbar{flex-direction:column;align-items:flex-start;padding:12px;gap:8px}.zoom-toolbar h2{font-size:14px}.zoom-controls{gap:6px;flex-shrink:1}.zoom-controls button{min-height:36px;padding:7px 9px;font-size:12px}.zoom-help{padding:6px 12px;font-size:11px}.product-zoom-hint{font-size:11px;padding:6px 10px}}

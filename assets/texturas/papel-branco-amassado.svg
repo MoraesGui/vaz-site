@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+  <defs>
+    <filter id="creases" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".012 .018" numOctaves="3" seed="31" stitchTiles="stitch" result="folds"/>
+      <feDiffuseLighting in="folds" surfaceScale="11" diffuseConstant="1" lighting-color="#ffffff">
+        <feDistantLight azimuth="225" elevation="48"/>
+      </feDiffuseLighting>
+    </filter>
+    <filter id="fibers" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="12" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <filter id="soft-fold"><feGaussianBlur stdDeviation="1.5"/></filter>
+    <pattern id="fold-lines" width="720" height="720" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-fold)">
+        <path d="M-30 135 180 260 310 470 535 590 750 550M110-30 180 260 435 180 590-30M310 470 240 750M435 180 535 590 680 750" stroke="#5f6266" stroke-opacity=".11" stroke-width="3"/>
+        <path d="M-30 139 177 264 307 474 532 594 750 554M106-30 177 264 432 184 586-30M307 474 236 750M432 184 532 594 676 750" stroke="#fff" stroke-opacity=".85" stroke-width="5"/>
+      </g>
+    </pattern>
+  </defs>
+  <path fill="#fff" d="M0 0h720v720H0z"/>
+  <path opacity=".22" filter="url(#creases)" d="M0 0h720v720H0z"/>
+  <path fill="url(#fold-lines)" d="M0 0h720v720H0z"/>
+  <path opacity=".045" filter="url(#fibers)" d="M0 0h720v720H0z"/>
+</svg>

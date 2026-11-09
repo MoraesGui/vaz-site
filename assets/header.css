@@ -1,0 +1,67 @@
+/* O mesmo cabeçalho em todas as páginas; a textura pertence à Home. */
+header#inicio {
+  position: relative;
+  isolation: isolate;
+  margin-inline: var(--gutter);
+  border-bottom: 1px solid var(--royal);
+}
+header#inicio:not(.header-paper)::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(-1 * var(--gutter));
+  z-index: -1;
+  background: #fff;
+  pointer-events: none;
+}
+header#inicio .brand-descriptor { margin: 0; }
+header#inicio nav.page-nav a {
+  color: var(--ink);
+  border-bottom: 2px solid transparent;
+}
+header#inicio nav.page-nav a[aria-current="page"] {
+  color: var(--royal);
+  border-bottom-color: var(--royal);
+}
+@media (min-width: 761px) {
+  header#inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 26px;
+    min-height: 76px;
+    padding: 0;
+  }
+  header#inicio .brand { grid-column: 1; grid-row: 1; justify-self: start; }
+  header#inicio .brand img { width: 76px; height: auto; }
+  header#inicio .brand-descriptor {
+    display: block;
+    padding-left: 20px;
+    font: 11px/1.6 var(--mono);
+    border-left: 1px solid var(--line);
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: 96px;
+  }
+  header#inicio nav.page-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    gap: clamp(18px, 2vw, 30px);
+    font-size: 17px;
+  }
+  header#inicio nav.page-nav a { padding: 12px 0; white-space: nowrap; }
+  header#inicio .header-note { display: block; grid-column: 3; grid-row: 1; justify-self: end; margin-left: 0; font: 25px var(--hand); }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  header#inicio .brand-descriptor, header#inicio .header-note { display: none; }
+}
+@media (min-width: 1101px) and (max-width: 1350px) {
+  header#inicio .brand-descriptor { display: none; }
+}

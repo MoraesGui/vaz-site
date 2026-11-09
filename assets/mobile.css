@@ -1,0 +1,152 @@
+/* Ajustes compartilhados das páginas estáticas em telas menores. */
+@media (max-width: 760px) {
+  :root { --gutter: clamp(16px, 4.5vw, 28px); }
+  header#inicio {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px 18px;
+    padding-block: 16px 0;
+    min-height: 0;
+  }
+  header#inicio .brand img { width: 68px; }
+  header#inicio .brand-descriptor {
+    display: block;
+    padding-left: 16px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  header#inicio .header-note { display: none; }
+  header#inicio nav.page-nav {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    margin: 0;
+    gap: 4px;
+  }
+  header#inicio nav.page-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 10px 2px;
+    font-size: clamp(13px, 3.6vw, 17px);
+    white-space: nowrap;
+  }
+  .edition { gap: 12px; padding-block: 8px; font-size: 8px; }
+  .edition span { min-width: 0; }
+  .edition span:last-child { flex-shrink: 0; }
+  .hero { padding-top: 24px; padding-bottom: 28px; }
+  .hero .folio { gap: 12px; margin-bottom: 16px; font-size: 9px; }
+  .hero .folio > span { flex: 1; min-width: 0; }
+  .headline { margin: 0; padding: 0; }
+  .headline h1 { font-size: 22vw; gap: .025em; line-height: .9; }
+  .headline-note {
+    position: static;
+    margin: 12px 0 20px;
+    padding: 0;
+    font-size: clamp(26px, 6vw, 34px);
+    line-height: 1.2;
+    transform: none;
+  }
+  .hero-bottom { display: flex; flex-direction: column; margin-top: 0; gap: 24px; }
+  .hero-photo { order: -1; width: 100%; margin: 0; }
+  .hero-photo > img { aspect-ratio: 4 / 3; object-fit: cover; }
+  .hero-copy { display: block; width: 100%; max-width: none; padding: 0; }
+  .hero-copy h2 { font-size: clamp(30px, 7.8vw, 45px); line-height: 1.1; margin: 0 0 16px; }
+  .hero-copy > p:not(.eyebrow) { max-width: 48ch; font-size: 18px; }
+  .hero-copy .button { margin-top: 20px; }
+  .button { min-height: 48px; max-width: 100%; gap: 16px; }
+  .contents { display: flex; flex-wrap: wrap; gap: 4px 16px; padding-block: 12px; }
+  .contents a { display: inline-flex; align-items: center; min-height: 44px; font-size: 10px; }
+  .editorial-note { display: block; padding-block: 30px; }
+  .editorial-note > .eyebrow { margin-bottom: 16px; }
+  .editorial-note h2 { font-size: clamp(27px, 5.8vw, 38px); line-height: 1.2; }
+  .editorial-note .hand-note { margin: 18px 0 0; text-align: right; font-size: 29px; }
+  .editorial-note .hand-note::before { content: none; }
+  .collection-heading { grid-template-columns: minmax(0, 1fr); gap: 18px; margin-bottom: 20px; }
+  .collection h2 { grid-column: 1; grid-row: auto; font-size: clamp(48px, 12vw, 76px); max-width: 12ch; }
+  .collection-intro { grid-column: 1; grid-row: auto; margin: 0; gap: 12px 20px; }
+  .collection-intro > p { font-size: 20px; }
+  .collection-intro .text-link { min-height: 44px; font-size: 11px; }
+  .sticker-cluster {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+    width: 244px;
+    height: 238px;
+    transform: scale(.72);
+    transform-origin: top center;
+    margin: 0 0 -60px;
+  }
+  #pecas {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 82%);
+    gap: 16px;
+    margin-top: 0;
+    padding: 12px 4px 20px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 4px;
+  }
+  #pecas > .product { min-width: 0; scroll-snap-align: start; }
+  .product-title { overflow-wrap: anywhere; }
+  .product-meta { font-size: 10px; line-height: 1.6; }
+  #cap-motion-toggle { min-height: 44px; font-size: 11px; }
+  .rack { margin-top: 24px; padding-top: 24px; }
+  .rack .acervo-heading h3 { font-size: clamp(25px, 6vw, 34px); }
+  .rack .acervo-heading > p:last-child { font-size: 20px; }
+  .rack-tools { margin-block: 20px; gap: 12px; }
+  .rack-footnote { flex-wrap: wrap; gap: 10px; line-height: 1.6; }
+  .rack > .rack-details .rack-product-copy h4 { font-size: 27px; }
+  .community { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 32px; }
+  .community-photo { margin: 0; }
+  .community-copy h2 { font-size: clamp(44px, 10vw, 66px); max-width: none; margin: 0 0 20px; }
+  .community-copy > p:not(.eyebrow) { font-size: 19px; }
+  .community-copy .hand-note { font-size: 29px; }
+  .archive-heading { display: flex; align-items: center; gap: 16px; }
+  .archive-heading h2 { flex: 1; min-width: 0; }
+  .archive-heading .archive-stamp { width: clamp(88px, 23vw, 150px); margin: 12px 6px; }
+  .archive-heading h2 { font-size: clamp(46px, 11vw, 72px); overflow-wrap: break-word; }
+  .archive-heading .hand-note { max-width: none; margin-top: 16px; font-size: 28px; }
+  .archive-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .story { min-width: 0; }
+  .story h3 { font-size: clamp(30px, 7.5vw, 40px); }
+  .story p { font-size: 18px; }
+  .margin-notes { display: block; }
+  .margin-notes .hand-note { font-size: 32px; }
+  .invitation-top { flex-wrap: wrap; gap: 16px; }
+  .invitation h2 { font-size: clamp(54px, 15vw, 100px); line-height: .95; margin-block: 28px; }
+  .invitation-bottom { display: block; }
+  .invitation-bottom p { font-size: 20px; }
+  .invitation .button { margin-top: 22px; }
+  footer { display: flex; flex-wrap: wrap; gap: 18px; }
+  footer > p { flex: 1 1 180px; font-size: 21px; }
+  footer > a:not(.brand) { min-height: 44px; display: inline-flex; align-items: center; }
+  .footer-bottom { width: 100%; flex-basis: 100%; flex-wrap: wrap; }
+  .page-intro h1 { font-size: clamp(48px, 12vw, 90px); overflow-wrap: break-word; }
+  .paper-feature, .paper-columns, .board-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .paper-columns article + article { border-left: 0; border-top: 1px solid var(--line); padding: 24px 0 0; }
+  .paper-line, .board-top { flex-wrap: wrap; gap: 12px; }
+  .catalog-search { width: 100%; }
+  .catalog-group .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .catalog-group .products > .product { grid-column: auto; margin: 0; padding: 0; min-width: 0; }
+  .catalog-group .product-title { font-size: 22px; min-height: 0; }
+  :is(#rack-focus-dialog, #product-dialog) .rack-focus-header { flex-wrap: wrap; gap: 8px 12px; padding-inline: var(--gutter); }
+  :is(#rack-focus-dialog, #product-dialog) .product-color-tags button { min-width: 34px; width: 34px; flex-basis: 34px; }
+  :is(#rack-focus-dialog, #product-dialog) .product-color-tags { max-width: min(210px, 70vw); }
+  :is(#rack-focus-dialog, #product-dialog) .rack-sides { flex-wrap: wrap; }
+  #rack-focus-dialog .rack-options { flex-wrap: wrap; gap: 16px; }
+  #product-dialog.vaz-product-view .modal-copy, #rack-focus-dialog .rack-focus-details { width: calc(100% - 2 * var(--gutter)); }
+  #product-dialog.vaz-product-view .modal-actions { width: 100%; }
+  #product-dialog.vaz-product-view .modal-actions .button { width: 100%; justify-content: center; }
+  #product-dialog.vaz-product-view .modal-copy { padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 380px) {
+  .edition span:last-child { display: none; }
+  .notes { grid-template-columns: minmax(0, 1fr); }
+  .catalog-group .products { grid-template-columns: minmax(0, 1fr); }
+  .catalog-group .product-image { aspect-ratio: 1.1; }
+}
