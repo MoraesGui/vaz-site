@@ -1,16 +1,16 @@
-/* O mesmo cabeçalho em todas as páginas; a textura pertence à Home. */
+/* Cabeçalho e textura de papel a 15% compartilhados entre as páginas. */
 header#inicio {
   position: relative;
   isolation: isolate;
   margin-inline: var(--gutter);
   border-bottom: 1px solid var(--royal);
 }
-header#inicio:not(.header-paper)::before {
+header#inicio::before {
   content: '';
   position: absolute;
   inset: 0 calc(-1 * var(--gutter));
   z-index: -1;
-  background: #fff;
+  background: linear-gradient(rgba(255,255,255,.85), rgba(255,255,255,.85)), url('texturas/papel-branco-amassado.jpg') center / cover no-repeat;
   pointer-events: none;
 }
 header#inicio .brand-descriptor { margin: 0; }

@@ -4,7 +4,6 @@ body.news-page {
   background-size: auto, 1200px auto;
   background-repeat: repeat;
 }
-body.news-page header#inicio:not(.header-paper)::before { background: transparent; }
 .news-edition {
   width: min(1180px, calc(100% - 2 * var(--gutter)));
   margin: 16px auto 64px;

@@ -29,9 +29,9 @@ nav a:hover,.text-link:hover,footer a:hover{text-decoration:underline;text-under
 .header-note{font:25px var(--hand);color:var(--royal);transform:rotate(-5deg);margin-left:15px}
 main{overflow:clip}
 .hero{padding:22px var(--gutter) 38px}
-.hero-paper,.header-paper::before{
+.hero-paper,.header-paper::before,.page-intro{
   background-color:#fff;
-  background-image:linear-gradient(#ffffffcc,#ffffffcc),url('assets/texturas/papel-branco-amassado.jpg');
+  background-image:linear-gradient(rgba(255,255,255,.85),rgba(255,255,255,.85)),url('assets/texturas/papel-branco-amassado.jpg');
   background-repeat:no-repeat;
   background-position:center;
   background-size:cover;
@@ -291,6 +291,9 @@ header .brand-descriptor{padding-left:20px}
 .headline-note{background:none;padding:0;left:0;right:auto;top:100%;bottom:auto;margin-top:2px;font-size:clamp(26px,2.7vw,40px);z-index:3;transform:rotate(-4deg)}
 .hero-bottom{position:relative;margin-top:-26px;align-items:start;gap:4%}
 .hero-photo{position:relative;z-index:2}
+.hero-paper .hero-bottom{margin-top:clamp(-58px,-4vw,-32px)}
+.hero-paper .hero-photo .headline-note{position:absolute;inset:30px auto auto 20px;margin:0;padding:0;max-width:calc(100% - 40px);font-size:clamp(26px,3vw,44px);line-height:1.15;color:#fff;background:transparent;text-shadow:0 1px 6px #15265060;transform:rotate(-8deg);transform-origin:left center;z-index:3;pointer-events:none}
+@media(max-width:760px){.hero-paper .hero-bottom{margin-top:-22px}.hero-paper .hero-photo .headline-note{top:28px;left:16px;max-width:calc(100% - 32px);font-size:clamp(25px,6vw,36px)}}
 .hero-copy{position:relative;z-index:1;padding-top:74px}
 .collection-heading{grid-template-columns:minmax(0,1fr) 156px;gap:12px 30px;align-items:center;margin-bottom:5px}
 .collection-heading>.eyebrow{grid-column:1;grid-row:1;font-weight:700}
