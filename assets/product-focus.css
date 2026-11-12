@@ -30,8 +30,8 @@
 #rack-focus-dialog .rack-product-copy>.eyebrow{display:none}
 #rack-focus-dialog .rack-product-copy>h4{order:0;max-width:26ch;font:400 31px/1.12 var(--serif);text-transform:none}
 #rack-focus-dialog .rack-options{order:1;display:flex;justify-content:center;width:auto}
-#rack-focus-dialog .rack-description{order:2;max-width:52ch;margin:0;font:16px/1.5 var(--serif)}
-#rack-focus-dialog .rack-contact{order:3;display:flex;align-items:center;width:min(100%,340px);padding-top:14px;border-top:1px solid var(--line)}
+#rack-focus-dialog .rack-description{order:3;max-width:52ch;margin:8px 0 0;font:16px/1.5 var(--serif)}
+#rack-focus-dialog .rack-contact{order:2;display:flex;align-items:center;width:min(100%,340px);padding-top:0;border-top:0}
 #rack-focus-dialog .rack-contact p{max-width:none;font-size:9px;text-align:center}
 #rack-focus-dialog .rack-contact>.button{width:100%;font-size:10px}
 #rack-focus-dialog .rack-sides{justify-content:center}
@@ -55,11 +55,11 @@
 #product-dialog.vaz-product-view :is(#shirt-side-field,#sweatshirt-side-field)>legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 #product-dialog.vaz-product-view :is(#shirt-sides,#sweatshirt-sides){justify-content:center;gap:8px}
 #product-dialog.vaz-product-view :is(#shirt-sides,#sweatshirt-sides) button{min-height:40px;padding:8px 16px;border-radius:20px;font:11px/1.4 var(--mono)}
-#product-dialog.vaz-product-view #modal-description{order:2;max-width:52ch;margin:0;font:16px/1.5 var(--serif)}
-#product-dialog.vaz-product-view #cap-design-field{order:2;margin:0}
+#product-dialog.vaz-product-view #modal-description{order:4;max-width:52ch;margin:8px 0 0;font:16px/1.5 var(--serif)}
+#product-dialog.vaz-product-view #cap-design-field{order:1;margin:0}
 #product-dialog.vaz-product-view #cap-designs{justify-content:center}
-#product-dialog.vaz-product-view #variant-status{order:3;margin:0;font:10px/1.5 var(--mono)}
-#product-dialog.vaz-product-view .modal-actions{order:4;justify-content:center;margin:0}
+#product-dialog.vaz-product-view #variant-status{order:2;margin:0;font:10px/1.5 var(--mono)}
+#product-dialog.vaz-product-view .modal-actions{order:3;justify-content:center;margin:0}
 #product-dialog.vaz-product-view .modal-actions .button{margin:0;border-radius:0;font-size:11px}
 @media(max-width:760px){
  .product-focus-scene{top:90px;height:420px}.product-focus-scene img{width:130px;filter:blur(8px);opacity:.35;transform:translateX(calc(-50% + var(--scene-offset)*.6))}
