@@ -1,0 +1,71 @@
+.mobile-home-actions { display:none; }
+.mobile-nav-drawer { display:none; }
+@media(max-width:760px) {
+  body > .edition { display:none; }
+  body header#inicio {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    min-height:0;
+    margin:0;
+    padding:18px 7.8%;
+    border:0;
+  }
+  body:not(.home-page) header#inicio { position:relative; }
+  body:not(.home-page) header#inicio::before { inset:0; }
+  body header#inicio .brand img { width:clamp(54px,13vw,90px); height:auto; }
+  body header#inicio .brand-descriptor, body header#inicio .header-note,
+  body header#inicio nav.page-nav { display:none; }
+  body header#inicio .mobile-home-actions { display:flex; align-items:center; gap:10px; }
+  .mobile-home-actions > :is(button,a) { display:grid; place-items:center; width:44px; height:44px; padding:7px; background:transparent; border:0; color:var(--ink); cursor:pointer; }
+  .home-page header#inicio .mobile-home-actions > :is(button,a) { color:#fff; }
+  .mobile-home-actions svg { display:block; width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+  #mobile-navigation-drawer {
+    position:fixed;
+    inset:0 0 0 auto;
+    width:min(86vw,360px);
+    height:100dvh;
+    max-width:none;
+    max-height:none;
+    margin:0;
+    padding:24px 26px max(24px,env(safe-area-inset-bottom));
+    border:0;
+    border-radius:0;
+    background:#fff;
+    color:var(--ink);
+    box-shadow:-12px 0 48px #00153725;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  #mobile-navigation-drawer[open] { display:flex; flex-direction:column; gap:38px; }
+  #mobile-navigation-drawer::backdrop { background:#07152b80; }
+  .mobile-drawer-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .mobile-drawer-heading img { width:76px; height:auto; }
+  .mobile-drawer-close { display:grid; place-items:center; flex:none; width:44px; height:44px; padding:10px; background:transparent; border:1px solid var(--line); color:var(--ink); }
+  .mobile-drawer-close svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.5; }
+  #mobile-navigation-drawer .mobile-drawer-links { display:flex; flex-direction:column; align-items:stretch; width:100%; margin:0; gap:0; }
+  #mobile-navigation-drawer .mobile-drawer-links a { display:flex; align-items:center; min-height:64px; padding:12px 0; border-bottom:1px solid var(--line); font:500 27px/1.2 var(--serif); }
+  #mobile-navigation-drawer .mobile-drawer-links a[aria-current="page"] { color:var(--royal); }
+  .home-page .mobile-home-panels { display:block; padding:20px 0 30px; background:#f8f6f2; font-family:Arial,Helvetica,sans-serif; }
+  .home-page main > .contents, .home-page main > .editorial-note { display:none; }
+  .mobile-news-panel { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr); align-items:center; gap:12px; padding:8px 5% 24px; }
+  .mobile-panel-kicker { display:flex; align-items:center; gap:8px; margin:0 0 10px; color:#0645cb; font:700 10px/1.2 Arial,Helvetica,sans-serif; text-transform:uppercase; }
+  .mobile-panel-kicker::after { content:''; width:28px; height:1px; background:currentColor; opacity:.65; }
+  .mobile-news-copy h2, .mobile-essence-copy h2 { margin:0 0 10px; font:750 clamp(20px,5.4vw,32px)/1.05 Arial,Helvetica,sans-serif; letter-spacing:-.035em; }
+  .mobile-news-copy > p:not(.mobile-panel-kicker), .mobile-essence-copy > p:not(.mobile-panel-kicker) { margin:0 0 12px; font:400 clamp(12px,3vw,16px)/1.25 Arial,Helvetica,sans-serif; }
+  .mobile-panel-link { display:inline-flex; align-items:center; justify-content:space-between; gap:14px; min-height:38px; padding:8px 15px; border:1px solid #0645cb; border-radius:40px; color:#0645cb; font:700 10px/1.2 Arial,Helvetica,sans-serif; }
+  .mobile-panel-link svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; }
+  .mobile-news-art { position:relative; min-width:0; margin:0 2px 0 0; transform:rotate(-13deg); }
+  .mobile-news-art img { width:100%; aspect-ratio: .82; object-fit:cover; border:5px solid #e7dbcd; box-shadow:3px 7px 10px #30221735; }
+  .mobile-news-art::after { content:''; position:absolute; top:4px; right:-18px; width:20px; height:24px; background:repeating-conic-gradient(from 12deg at 0 100%,transparent 0deg 14deg,#0645cb 15deg 20deg,transparent 21deg 33deg); transform:rotate(18deg); }
+  .mobile-essence-panel { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); align-items:stretch; min-height:190px; margin:0 2% 0 0; overflow:hidden; border-radius:0 14px 14px 0; background:#08377f; color:#fff; }
+  .mobile-essence-image { position:relative; background:url('fotos/vaz-dias-melhores-editorial.png') left bottom / 230% auto no-repeat; }
+  .mobile-essence-image::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent 65%,#08377f); }
+  .mobile-essence-copy { min-width:0; padding:22px 15px 18px 2px; }
+  .mobile-essence-copy .mobile-panel-kicker { color:#fff; font-size:9px; }
+  .mobile-essence-copy h2 { font-size:clamp(20px,5vw,29px); }
+  .mobile-essence-copy > p:not(.mobile-panel-kicker) { font-size:clamp(11px,2.8vw,15px); }
+  .mobile-essence-copy .mobile-panel-link { min-height:36px; border-color:#fff; color:#fff; font-size:10px; padding:8px 13px; }
+}
+@media(min-width:761px) { .mobile-home-panels { display:none; } }

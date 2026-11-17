@@ -1,0 +1,145 @@
+.mobile-campaign-hero, .mobile-home-actions { display:none; }
+@media(max-width:760px) {
+  .home-page > .edition, .home-page .hero.hero-paper { display:none; }
+  .home-page header#inicio {
+    position:absolute;
+    inset:0 0 auto;
+    z-index:30;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin:0;
+    padding:clamp(16px,4.5vw,30px) 7.8%;
+    min-height:0;
+    border:0;
+    background:none;
+  }
+  .home-page header#inicio::before { content:none; }
+  .home-page header#inicio .brand img {
+    width:clamp(54px,13vw,90px);
+    height:auto;
+    filter:brightness(0) invert(1);
+    mix-blend-mode:normal;
+  }
+  .home-page header#inicio .brand-descriptor, .home-page header#inicio .header-note { display:none; }
+  .home-page .mobile-home-actions { display:flex; align-items:center; gap:10px; }
+  .mobile-home-actions > :is(button,a) {
+    display:grid;
+    place-items:center;
+    width:44px;
+    height:44px;
+    padding:7px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+  }
+  .mobile-home-actions svg { width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+  .home-page header#inicio nav.page-nav { display:none; }
+  .home-page[data-mobile-menu-open] header#inicio nav.page-nav {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    position:absolute;
+    top:100%;
+    left:7.8%;
+    right:7.8%;
+    width:auto;
+    padding:12px 20px;
+    margin:0;
+    gap:0;
+    background:#fff;
+    border:1px solid #ffffff80;
+    box-shadow:0 12px 36px #00153725;
+  }
+  .home-page header#inicio nav.page-nav a { justify-content:flex-start; min-height:48px; font-size:19px; }
+  .mobile-campaign-hero {
+    position:relative;
+    display:block;
+    width:100%;
+    aspect-ratio:966 / 1628;
+    overflow:hidden;
+    isolation:isolate;
+    color:#fff;
+    background:#152650;
+  }
+  .mobile-campaign-hero picture, .mobile-campaign-hero picture img {
+    position:absolute;
+    inset:0;
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:none;
+    object-fit:cover;
+  }
+  .mobile-campaign-hero::after {
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:0;
+    background:linear-gradient(180deg,#00142a30 0%,transparent 40%,transparent 73%,#00000030 100%);
+    pointer-events:none;
+  }
+  .mobile-campaign-title {
+    position:absolute;
+    top:13.2%;
+    left:7.8%;
+    right:5%;
+    z-index:1;
+  }
+  .mobile-campaign-title h1 {
+    margin:0;
+    color:#fff;
+    font:750 clamp(36px,11.8vw,88px)/.95 Arial,Helvetica,sans-serif;
+    letter-spacing:-.055em;
+  }
+  .mobile-campaign-title h1 span { display:block; }
+  .mobile-campaign-title > p {
+    margin:14px 0 0;
+    color:#fff;
+    font:400 clamp(15px,4.8vw,35px)/1.2 Arial,Helvetica,sans-serif;
+    letter-spacing:-.03em;
+  }
+  .mobile-campaign-title::after { content:''; display:block; width:18%; height:5px; margin-top:12px; background:#0645ed; }
+  .mobile-campaign-signoff {
+    position:absolute;
+    left:12%;
+    right:12%;
+    bottom:8.5%;
+    z-index:1;
+    width:fit-content;
+    margin:0 auto;
+    padding:0 5px 12px;
+    color:#fff;
+    font:500 clamp(31px,9.4vw,70px)/.9 var(--hand);
+    text-align:center;
+    transform:rotate(-7deg);
+  }
+  .mobile-campaign-signoff::after {
+    content:'';
+    position:absolute;
+    left:3%;
+    right:-3%;
+    bottom:0;
+    height:7px;
+    background:#0645ed;
+    clip-path:polygon(0 90%,91% 0,100% 28%,97% 75%,25% 67%);
+  }
+  .mobile-campaign-next {
+    position:absolute;
+    z-index:1;
+    bottom:1%;
+    left:50%;
+    transform:translateX(-50%);
+    display:grid;
+    place-items:center;
+    width:44px;
+    height:44px;
+    border:1.5px solid #fff;
+    border-radius:50%;
+    color:#fff;
+  }
+  .mobile-campaign-next svg { width:25px; height:25px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .home-page .mobile-home-actions > :focus-visible, .mobile-campaign-next:focus-visible { outline:2px solid #fff; outline-offset:4px; }
+}

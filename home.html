@@ -11,17 +11,33 @@
   <link rel="stylesheet" href="assets/clothing-rack.css?v=6">
   <script src="moletons.js?v=logo-vaz-novos-1" defer></script><script src="logo-products.js?v=bone-bordado-2" defer></script>
 <script src="montink-produtos.js" defer></script><script src="editorial.js?v=6" defer></script>
-<link rel="stylesheet" href="assets/product-zoom.css?v=4"><script src="assets/product-zoom.js?v=5" defer></script><style>nav a[aria-current="page"]{color:var(--royal);border-bottom:2px solid var(--royal)}@media(max-width:700px){header nav{display:flex;width:100%;margin-left:0;justify-content:space-between;gap:12px;flex-wrap:wrap}header{flex-wrap:wrap}}</style><script src="assets/clothing-rack.js?v=5" defer></script><link rel="stylesheet" href="assets/product-focus.css?v=5"><link rel="stylesheet" href="assets/mobile.css?v=1"><link rel="stylesheet" href="assets/header.css?v=1"></head>
-<body>
+<link rel="stylesheet" href="assets/product-zoom.css?v=4"><script src="assets/product-zoom.js?v=5" defer></script><style>nav a[aria-current="page"]{color:var(--royal);border-bottom:2px solid var(--royal)}@media(max-width:700px){header nav{display:flex;width:100%;margin-left:0;justify-content:space-between;gap:12px;flex-wrap:wrap}header{flex-wrap:wrap}}</style><script src="assets/clothing-rack.js?v=5" defer></script><link rel="stylesheet" href="assets/product-focus.css?v=5"><link rel="stylesheet" href="assets/mobile.css?v=1"><link rel="stylesheet" href="assets/header.css?v=1"><link rel="stylesheet" href="assets/home-mobile-hero.css?v=1"><link rel="stylesheet" href="assets/mobile-navigation.css?v=1"><script src="assets/mobile-navigation.js?v=1" defer></script></head>
+<body class="home-page">
 <a class="skip-link" href="#principal">Pular para o conteúdo</a>
 <div class="edition"><span>Da rua para o mundo</span><span>EDIÇÃO 001 · BOAS NOTÍCIAS CIRCULAM</span><span>UM OLHAR VAZ</span></div>
 <header id="inicio" class="header-paper">
   <a class="brand" href="home.html" aria-label="VAZ, início"><img src="assets/marca/logo.png" alt="VAZ" width="135" height="54"></a>
   <span class="brand-descriptor">ROUPAS, ENCONTROS <br>E OUTRAS BOAS NOVAS.</span>
-  <nav class="page-nav" aria-label="Navegação principal"><a href="home.html" aria-current="page">Home</a><a href="boas-novas.html">Boas Novas</a><a href="comunidade.html">Comunidade</a><a href="colecao.html">Coleção</a></nav>
+  <nav class="page-nav" id="home-navigation" aria-label="Navegação principal"><a href="home.html" aria-current="page">Home</a><a href="boas-novas.html">Boas Novas</a><a href="comunidade.html">Comunidade</a><a href="colecao.html">Coleção</a></nav>
+  <div class="mobile-home-actions">
+    <button type="button" data-mobile-home-menu aria-label="Abrir menu" aria-controls="home-navigation" aria-expanded="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h22M5 16h22M5 25h22"/></svg></button>
+    <a href="colecao.html" aria-label="Ver produtos da coleção"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 10h18l2 19H5zM11 11V7a5 5 0 0 1 10 0v4"/></svg></a>
+  </div>
   <a class="header-note" href="https://www.instagram.com/vazbr_/" target="_blank" rel="noopener noreferrer">a gente se encontra</a>
 </header>
 <main id="principal" tabindex="-1">
+  <section class="mobile-campaign-hero" aria-labelledby="mobile-campaign-heading">
+    <picture>
+      <source media="(max-width:760px)" srcset="assets/fotos/vaz-hero-mobile.png">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" width="966" height="1628" alt="Duas pessoas conversam em um sofá de couro, usando peças VAZ, diante de uma parede com faixas azuis" fetchpriority="high">
+    </picture>
+    <div class="mobile-campaign-title">
+      <h1 id="mobile-campaign-heading"><span>Histórias que</span><span>aproximam.</span></h1>
+      <p>Roupas que acompanham.</p>
+    </div>
+    <p class="mobile-campaign-signoff">é sobre gente.<br>sempre foi.</p>
+    <a class="mobile-campaign-next" href="#colecao" aria-label="Explorar a coleção"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 4v19M6 15l8 8 8-8"/></svg></a>
+  </section>
   <section class="hero hero-paper" aria-labelledby="hero-title">
     <div class="folio"><span>O cotidiano merece um outro olhar.</span><span>Jornal de boas novas / Nº 001</span></div>
     <div class="headline">
@@ -39,6 +55,26 @@
       </figure>
     </div>
   </section>
+  <div class="mobile-home-panels">
+    <section class="mobile-news-panel" aria-labelledby="mobile-news-title">
+      <div class="mobile-news-copy">
+        <p class="mobile-panel-kicker">Boas notícias</p>
+        <h2 id="mobile-news-title">Nem toda boa notícia vira manchete.</h2>
+        <p>Algumas viram conversa, outras viram abraço. As nossas também viram roupa.</p>
+        <a class="mobile-panel-link" href="boas-novas.html">Conheça a história <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      </div>
+      <figure class="mobile-news-art"><img src="assets/fotos/vaz-lookbook-boas-novas-v2.png" width="1086" height="1448" alt="Publicação editorial da VAZ" loading="lazy"></figure>
+    </section>
+    <section class="mobile-essence-panel" aria-labelledby="mobile-essence-title">
+      <div class="mobile-essence-image" role="img" aria-label="Roupas VAZ dobradas em tons claros e azul-marinho"></div>
+      <div class="mobile-essence-copy">
+        <p class="mobile-panel-kicker">Nossa essência</p>
+        <h2 id="mobile-essence-title">Mais que roupas, uma conexão.</h2>
+        <p>A VAZ nasceu para vestir histórias reais, com conforto, estilo e propósito.</p>
+        <a class="mobile-panel-link" href="#comunidade">Sobre a VAZ <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+      </div>
+    </section>
+  </div>
   <div class="contents" aria-label="Nesta edição"><span>NESTA EDIÇÃO</span><a href="#colecao">01 / ROUPAS QUE CONTAM</a><a href="#comunidade">02 / GENTE DA GENTE</a><a href="#boas-novas">03 / ARQUIVO AFETIVO</a></div>
   <section class="editorial-note" aria-labelledby="note-title">
     <p class="eyebrow">NOTA DA EDIÇÃO <br>NOSSO JEITO DE VER</p>
