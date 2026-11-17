@@ -19,23 +19,43 @@
   source.querySelectorAll('a').forEach(link=>links.append(link.cloneNode(true)));
   document.body.append(drawer);
   const media=matchMedia('(max-width:760px)');
+  const reducedMotion=matchMedia('(prefers-reduced-motion:reduce)');
+  let closeTimer;
+  function finishClose() {
+    clearTimeout(closeTimer);
+    if(drawer.open)drawer.close();
+    drawer.classList.remove('is-closing');
+  }
+  function requestClose() {
+    if(!drawer.open||drawer.classList.contains('is-closing'))return;
+    if(reducedMotion.matches||!media.matches){finishClose();return;}
+    drawer.classList.add('is-closing');
+    closeTimer=setTimeout(finishClose,260);
+  }
   toggle.setAttribute('aria-controls',drawer.id);
   toggle.setAttribute('aria-haspopup','dialog');
   toggle.addEventListener('click',()=>{
     if(!media.matches)return;
-    if(drawer.open)drawer.close();
-    else { drawer.showModal();toggle.setAttribute('aria-expanded','true'); }
+    if(drawer.open)requestClose();
+    else { clearTimeout(closeTimer);drawer.classList.remove('is-closing');drawer.showModal();toggle.setAttribute('aria-expanded','true'); }
   });
-  drawer.querySelector('.mobile-drawer-close').addEventListener('click',()=>drawer.close());
+  drawer.querySelector('.mobile-drawer-close').addEventListener('click',requestClose);
+  drawer.addEventListener('cancel',event=>{event.preventDefault();requestClose();});
+  drawer.addEventListener('animationend',event=>{
+    if(event.target===drawer&&event.animationName==='mobile-drawer-exit')finishClose();
+  });
   drawer.addEventListener('click',event=>{
     if(event.target!==drawer)return;
     const rect=drawer.getBoundingClientRect();
-    if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)drawer.close();
+    if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)requestClose();
   });
   links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>drawer.close()));
   drawer.addEventListener('close',()=>{
+    clearTimeout(closeTimer);
+    drawer.classList.remove('is-closing');
     toggle.setAttribute('aria-expanded','false');
     if(media.matches)toggle.focus({preventScroll:true});
   });
-  media.addEventListener('change',()=>{if(!media.matches&&drawer.open)drawer.close();});
+  media.addEventListener('change',()=>{if(!media.matches&&drawer.open)finishClose();});
+  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches&&drawer.classList.contains('is-closing'))finishClose();});
 })();
